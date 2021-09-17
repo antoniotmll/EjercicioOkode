@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>Listado de Películas</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <div *ngIf="movies.length > 0;">
+        <ion-list>
+            <ion-list>
+                <ion-item mode="ios" *ngFor="let movie of movies" (click)="verPaginaDetalle(movie.id)" detail>
+                    <ion-thumbnail slot="start">
+                        <ion-img src="{{movie.poster}}"></ion-img>
+                    </ion-thumbnail>
+                    <ion-label>
+                        <h2>{{movie.title}}</h2>
+                        <p><b>Director: </b> {{movie.director}}</p>
+                        <p><b>Año: </b> {{movie.year}}</p>
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+        </ion-list>
+    </div>
+</ion-content>
